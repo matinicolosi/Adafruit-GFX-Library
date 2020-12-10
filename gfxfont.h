@@ -7,6 +7,36 @@
 #ifndef _GFXFONT_H_
 #define _GFXFONT_H_
 
+/*#if sizeof(bitmap) <= 32768
+  #error "Ok"
+#else
+  #error "El array es muy grande"*/
+//return (sizeof(f) <= 32768);
+// Limit of an Array
+
+/*/// Font data stored PER GLYPH  -VERSIÓN QUE SOPORTA FUENTES MUCHO MÁS GRANDES
+typedef struct {
+  long bitmapOffset;     ///< Pointer into GFXfont->bitmap
+  uint8_t width;         ///< Bitmap dimensions in pixels
+  uint8_t height;        ///< Bitmap dimensions in pixels
+  uint8_t xAdvance;      ///< Distance to advance cursor (x axis)
+  int8_t xOffset;        ///< X dist from cursor pos to UL corner
+  int16_t yOffset;       ///< Y dist from cursor pos to UL corner
+} GFXglyph;
+
+/// Data stored for FONT AS A WHOLE
+typedef struct {
+  uint8_t *bitmap; ///< Glyph bitmaps, concatenated
+  GFXglyph *glyph;  ///< Glyph array
+  uint16_t first;   ///< ASCII extents (first char)
+  uint16_t last;    ///< ASCII extents (last char)
+  int8_t yAdvance;  ///< Newline distance (y axis)
+} GFXfont;*/
+
+
+//----------------------------------------------------------------------------//
+
+
 /// Font data stored PER GLYPH
 typedef struct {
   uint16_t bitmapOffset; ///< Pointer into GFXfont->bitmap
